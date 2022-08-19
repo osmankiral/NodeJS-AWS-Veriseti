@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="file" id="s3-file" onchange="saveFile(this)">
+    </div>
+
+    <script>
+        function saveFile(event) {
+            const xhr = new XMLHttpRequest();
+            let formData = new FormData();
+            const file = event.files[0];
+            formData.append('s3-file', file)
+
+            xhr.onreadystatechange = (state) => {
+                console.log(xhr.status);
+            }
+
+            xhr.timeout = 5000;
+            xhr.open('POST', '/upload-to-s3');
+            xhr.send(formData);
+        }
+    </script>
+</body>
+</html>
