@@ -8,7 +8,7 @@ app.get('/',(req, res) => {
 
 app.post('/upload-to-s3', s3Controller.s3Upload)
 
-const port = process.env.port || '3000';
+const port = process.env.PORT || '3000';
 const host = '0.0.0.0';
 
 app.listen(port, host, function() {
