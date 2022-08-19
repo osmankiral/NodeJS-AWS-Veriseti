@@ -3,7 +3,7 @@ const s3Controller = require('./src/s3-controller')
 const app = express()
 
 app.get('/',(req, res) => {
-    res.sendFile(__dirname + './public/index.html')
+    res.sendFile(__dirname + '/public/index.html')
 })
 
 app.post('/upload-to-s3', s3Controller.s3Upload)
