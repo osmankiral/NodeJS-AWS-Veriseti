@@ -15,9 +15,13 @@ app.listen(port, host, function() {
     console.log(`Server is up at ${port}`)
 })
 */
+var http = require('http')
+var server =http.Server(app)
+
+
 const host = '0.0.0.0';
 const port = process.env.PORT || 3000;
 
-app.listen(port, host, function() {
+server.listen(port, host, function() {
     console.log("Server started.......");
   });
