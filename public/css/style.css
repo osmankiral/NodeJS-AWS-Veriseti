@@ -104,3 +104,8 @@ a {
   #recordingsList{
       max-width: 28em;
   }
+
+  hr.new {
+    border: 2px solid black;
+    border-radius: 5px;
+  }

@@ -12,7 +12,7 @@ var audioContext //audio context to help us record
 var recordButton = document.getElementById("recordButton");
 var stopButton = document.getElementById("stopButton");
 var pauseButton = document.getElementById("pauseButton");
-
+var isStartRec = true; //yeni
 //add events to those 2 buttons
 recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
@@ -68,7 +68,10 @@ function startRecording() {
 		rec = new Recorder(input,{numChannels:1})
 
 		//start the recording process
+		
 		rec.record()
+		
+		
 
 		console.log("Recording started");
 
