@@ -3,7 +3,7 @@ var start_btn = document.getElementById('start');
   
   var mediaRecorder = null,
     chunks = [],
-    max_duration = 30000; // in milliseconds.
+    max_duration = 60000; // in milliseconds.
   
   start_btn.onclick = function() {
     mediaRecorder.start(); // we don't even need timeslice
@@ -18,7 +18,7 @@ var start_btn = document.getElementById('start');
     if (mediaRecorder.state === "recording")
       mediaRecorder.stop();
       start_btn.disabled = false; 
-    stop_btn.disabled = true;
+      stop_btn.disabled = true;
   };
   
   function onSuccess(stream) {
@@ -43,7 +43,6 @@ var start_btn = document.getElementById('start');
         audio.onseeked = null;
         console.log(audio.duration);
         audio.currentTime = 0;
-        audio.play();
       }
     };
     //start_btn.disabled = false;
