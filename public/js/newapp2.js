@@ -1,24 +1,24 @@
-var start_btn = document.getElementById('start');
-  var stop_btn = document.getElementById('stop');
+var startt_btn = document.getElementById('startt');
+  var stopp_btn = document.getElementById('stopp');
   
   var mediaRecorder = null,
     chunks = [],
-    max_duration = 60000; // in milliseconds.
+    max_duration2 = 30000; // in milliseconds.
   
-  start_btn.onclick = function() {
+  startt_btn.onclick = function() {
     mediaRecorder.start(); // we don't even need timeslice
     // now we'll get similar max duration in every browsers
-    setTimeout(stopRecording, max_duration);
-    this.disabled = !(stop_btn.disabled = false);
+    setTimeout(stopRecording, max_duration2);
+    this.disabled = !(stopp_btn.disabled = false);
   };
   
-  stop_btn.onclick = stopRecording;
+  stopp_btn.onclick = stopRecording;
   
   function stopRecording() {
     if (mediaRecorder.state === "recording")
       mediaRecorder.stop();
-      start_btn.disabled = false; 
-      stop_btn.disabled = true;
+      startt_btn.disabled = false; 
+      stopp_btn.disabled = true;
   };
   
   function onSuccess(stream) {
